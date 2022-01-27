@@ -39,7 +39,7 @@ app.use((error, req, res, next) => {
   res.status(status).json({ message: message, data: data });
 });
 
-const MONGODB_URI = "mongodb://mongodb:27017/food-db";
+const MONGODB_URI = `mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_HOST}:${process.env.MONGODB_PORT}/food-db?authSource=admin`;
 
 mongoose
   .connect(MONGODB_URI)
