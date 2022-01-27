@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+html {
+  font-size: 62.5%;
+}
+
+body,
+input,
+select,
+button {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.6rem;
+}
+
+input:focus,
+select:focus,
+button:focus {
+  outline: none;
+}

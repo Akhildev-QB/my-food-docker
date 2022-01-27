@@ -1,0 +1,71 @@
+.food_item {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  border: $size_1 solid $dark_grey;
+  box-shadow: $size_1 $size_1 $size_6;
+  margin: $size_6;
+  color: $black;
+  background: $white;
+  background: linear-gradient(to left, $white 50%, $dark_grey 50%) right;
+  background-size: 200%;
+  transition: 0.4s;
+}
+
+.food_item:hover {
+  color: $white;
+  transform: scale(1.03);
+  background-position: left;
+  cursor: pointer;
+}
+
+.food_item_image {
+  margin: 0;
+  width: $size_36;
+}
+
+.food_item_name {
+  margin: $size_6 0 $size_2 $size_2;
+  font-size: $size_8;
+  font-weight: bolder;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: $size_35;
+}
+
+.food_item_category,
+.food_item_text {
+  margin: $size_2 0 $size_2 $size_2;
+  font-size: $size_7;
+  font-weight: lighter;
+  font-style: italic;
+  width: $size_35;
+}
+
+.food_item_add {
+  align-items: center;
+  justify-content: center;
+  width: $size_26;
+  height: $size_26;
+  font-size: $size_26;
+}
+
+.food_item_delete {
+  position: absolute;
+  margin: 0;
+  padding: $size_1 $size_3 $size_2 $size_3;
+  font: 700 21px/20px sans-serif;
+  background: $dark_grey;
+  background: linear-gradient(to left, $dark_grey 50%, $red 50%) right;
+  color: $white;
+  text-shadow: 0 $size_1 $size_2 $dark_grey;
+  background-size: 250%;
+  transition: 0.4s;
+}
+
+.food_item_delete:hover {
+  background-position: left;
+  transform: scale(1.16);
+}
