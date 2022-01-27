@@ -1,0 +1,32 @@
+version: "3.9"
+services:
+  mongodb:
+    image: "mongo"
+    volumes:
+      - food-data:/data/db
+    env_file:
+      - ./env/mongodb.env
+  food-api:
+    build: ./my-food-api
+    ports:
+      - "80:80"
+    volumes:
+      - ./my-food-api:/app
+      - /app/node_modules
+    env_file:
+      - ./env/food-api.env
+    depends_on:
+      - mongodb
+  food-web:
+    build: ./my-food-web
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./my-food-web/src:/app/src
+      - /app/node_modules
+    stdin_open: true
+    tty: true
+    depends_on:
+      - food-api
+volumes:
+  food-data:
